@@ -1,0 +1,8 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+SELECT ?concept (STR(?_label) AS ?label) (lang(?_label) AS ?language)
+WHERE {
+  ?concept a skos:Concept ;
+    skos:inScheme <http://linked.opendata.cz/resource/concept-scheme/cpv-2008> ;
+    skos:prefLabel ?_label .
+}
